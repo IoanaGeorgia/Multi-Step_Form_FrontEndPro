@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <title>Multi-step Form - FrontendPro Challenge</title>
+  <script src="https://kit.fontawesome.com/bf6bb25427.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+  <p class="formTitle">Join our community of developers</p>
+  <p class="formSubtitle">To join our community and participate in frontend challenges.</p>
+  <p class="formSubtitleSecond"> Please fill out the following form.</p>
+
+  <div class="formWrapper">
+    <div id="stepTracker" class="formStepTracker">
+    
+      <div class="trackerBullet">1</div>
+      <div id='line1' class="trackerLine"></div>
+      <div id="bullet2" class="trackerBullet">2</div>
+      <div id="line2" class="trackerLine"></div>
+      <div id="bullet3" class="trackerBullet">3</div>
+      <div id="line3" class="trackerLine"></div>
+      <div id="bullet4" class="trackerBullet">4</div>
+    </div>
+
+    <div id="separator" class="stepTrackerSeparator"></div>
+
+    <!-- FIRST STEP CODE -->
+
+    <div id="firstStep">
+      <div class="formContent">
+
+        <p class="formContentTitle">Personal Information</p>
+        <p class="formContentSubtitle">Please provide your personal details so we can get to know you better.</p>
+
+        <div class="formInputWrapper">
+          <div class="inputInnerWrapper">
+            <p>Full Name</p>
+            <input placeholder="John Doe" id="personalName">
+          </div>
+
+          <div class="inputInnerWrapper">
+            <p>Email Address</p>
+            <input placeholder="name@email.com" id="personalMail">
+          </div>
+
+          <div class="inputInnerWrapper">
+            <p>Phone Number</p>
+            <input placeholder="+91 1234567890" id="personalPhone">
+          </div>
+
+          <div class="inputInnerWrapper">
+            <p>Portofolio/GitHub Link</p>
+            <input placeholder="github.com/johndoe" id="personalLink">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="stepTrackerSeparator"></div>
+
+      <p class="formFooter">
+        <button onclick="goToSecondStep()">Next step</button>
+      </p>
+
+    </div>
+
+
+    <!-- SECOND STEP CODE -->
+
+
+    <div id="secondStep">
+      <div class="formContent">
+
+        <p class="formContentTitle">Skill Level</p>
+        <p class="formContentSubtitle">Please tell us about your skill level in frontend development.</p>
+
+        <div class="formInputWrapper">
+          <div class="skillLevelWrapper skill" onclick="sendLevel('beginner')">
+            <div><i class="fa-solid fa-seedling"></i></div>
+            <span>Beginner</span>
+          </div>
+
+          <div class="skillLevelWrapper skill" onclick="sendLevel('intermediate')">
+            <div><i class="fa-solid fa-compass"></i></div>
+            <span>Intermediate</span>
+          </div>
+
+          <div class="skillLevelWrapper skill" onclick="sendLevel('advanced')">
+            <div><i class="fa-solid fa-rocket"></i></div>
+            <span>Advanced</span>
+          </div>
+
+          <div class="skillLevelWrapper skill" onclick="sendLevel('expert')">
+            <div><i class="fa-solid fa-trophy"></i></div>
+            <span>Expert</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="stepTrackerSeparator"></div>
+
+      <p class="formFooter">
+        <button class="goBackButton" onclick="backToFirstStep()">Go Back</button>
+        <button onclick="goToThirdStep()">Next step</button>
+      </p>
+
+    </div>
+
+    <!-- THIRD STEP CODE -->
+
+    <div id="thirdStep">
+      <div class="formContent">
+
+        <p class="formContentTitle">Challenge Preference</p>
+        <p class="formContentSubtitle">Please tell us which frontend challenges you would like to participate in.</p>
+
+        <div class="formInputWrapper">
+          <div class="skillLevelWrapper">
+            <input class="pref" type="checkbox" value="'HTML/CSS/JS">
+            <span>HTML/CSS/JS</span>
+          </div>
+
+          <div class="skillLevelWrapper">
+            <input class="pref" type="checkbox" value="ReactJs" >
+            <span>ReactJs</span>
+          </div>
+
+          <div class="skillLevelWrapper">
+            <input class="pref" type="checkbox" value="AngularJs" >
+            <span>AngularJs</span>
+          </div>
+
+          <div class="skillLevelWrapper">
+            <input class="pref" type="checkbox" value="Vue.js" >
+            <span>Vue.js</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="stepTrackerSeparator"></div>
+
+      <p class="formFooter">
+        <button class="goBackButton" onclick="backToSecondStep()">Go Back</button>
+        <button onclick="goToFourthStep()">Next step</button>
+      </p>
+
+    </div>
+
+
+
+    <!-- FOURTH STEP CODE -->
+
+    <div id="fourthStep">
+      <div class="formContent">
+
+        <p class="formContentTitle">Review and Confirm</p>
+        <p class="formContentSubtitle">Please review your information to make sure everything is accurate.</p>
+
+        <div class="summaryWrapper">
+          <div class="summaryInnerWrapper">
+            <p>Full Name</p>
+            <p id="fullName">a</p>
+          </div>
+
+          <div class="summaryInnerWrapper">
+            <p>Email Address</p>
+            <p id="email">a</p>
+          </div>
+
+          <div class="summaryInnerWrapper">
+            <p>Phone Number</p>
+            <p id="phone">a</p>
+          </div>
+
+
+          <div class="summaryInnerWrapper">
+            <p>Portofolio/GitHub Link</p>
+            <p id="portofolio">a</p>
+          </div>
+
+          <div class="summaryInnerWrapper">
+            <p>Skill Level</p>
+            <p id="skillLevel">a</p>
+          </div>
+
+          <div class="summaryInnerWrapper">
+            <p>Challenge Preference</p>
+            <p id="preference">a</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="stepTrackerSeparator"></div>
+
+      <p class="formFooter">
+        <button class="goBackButton" onclick="backToThirdStep()">Go Back</button>
+        <button onclick="goToLastStep()">Submit</button>
+      </p>
+
+    </div>
+
+
+    <!-- LAST STEP CODE -->
+    
+    <div id="lastStep">
+      <div class="submitContent">
+    
+        <img src="Vector.png">
+        <p class="formContentTitle">Congratulations! 🎉</p>
+        <p class="formContentSubtitle">Your profile has been created and you are now ready to start participating in challenges that match your interests and
+        coding experience level.</p>
+    
+
+    
+      </div>
+    
+    
+
+    
+    </div>
+
+  </div>
+  </div>
+  <script src="/src/script.js"></script>
+</body>
+
+</html>

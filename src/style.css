@@ -1,0 +1,306 @@
+body * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+button{
+  cursor: pointer;
+}
+body{
+  background-color: #F3F3E3;
+  padding-top:min(10%, 11.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.formTitle{
+  font-size: min(5vw, 2rem);
+  color: #111827;
+  width:min(90%, 35.06rem);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.44rem;
+}
+.formSubtitle, .formSubtitleSecond{
+  color: #111827;
+  width:min(90%, 34.75rem);
+  text-align: center;
+  font-size: 1.13rem;
+  margin-top:0.44rem;
+}
+.formWrapper{
+  width:min(90%, 40rem);
+  height:min(100%, 32.81rem);
+  border-radius: 1rem;
+  background-color: white;
+  margin-bottom: 11.09rem;
+  margin-top:2rem;
+  box-shadow: 0.63rem 0.63rem #fab46428;
+}
+.formStepTracker{
+  margin-top:2rem;
+  margin-left: 3rem;
+  margin-right: 2.94rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trackerBullet{
+  width:min(40px, 2.13rem);
+  height:min(40px, 2.13rem);
+  border-radius: 50%;
+  background-color: #E5E7EB;
+  font-size: 0.88rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+
+}
+.trackerBullet:nth-of-type(1){
+  background-color: #FC6C4C;
+  color:white;
+}
+.trackerLine{
+  width:min(7vw, 6.25rem);
+  height:0.35rem;
+  background-color: #E5E7EB;
+  border-radius: 3.13rem;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.stepTrackerSeparator{
+  background-color: #E5E7EB;
+  width:min(90%, 36.25rem);
+  height:0.1rem;
+  margin-top:2rem;
+  margin-right:1.88rem;
+  margin-left:1.88rem;
+}
+.formContent{
+  margin-top:2rem;
+  margin-left:1.88rem;
+  margin-bottom: 2rem;
+}
+.formContentTitle{
+  font-size: min(5vw, 1.50rem);
+  font-weight: bold;
+
+}
+.formContentSubtitle{
+  font-size: 0.88rem;
+  color: #6B7280;
+  margin-top:0.38rem;
+}
+
+.formInputWrapper{
+  font-size: 0.88rem;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  gap:1rem;
+  margin-top:2.13rem;
+  margin-bottom: 2.13rem;
+  height:10.56rem;
+  color:#111827;
+}
+.inputInnerWrapper p{
+  font-weight: bold;
+}
+.inputInnerWrapper input{
+  margin-top:0.50rem;
+  width:16.88rem;
+  height:2.50rem;
+  border-radius: 0.63rem;
+  border: 2px solid #D1D5DB;
+  outline: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  cursor: pointer;
+}
+.inputInnerWrapper input:hover{
+  border: 2px solid #FC6C4C;
+}
+.formFooter{
+  text-align: right;
+  margin-bottom: 2rem;
+  margin-top:1.94rem;
+  margin-right: 1.88rem;
+  margin-left: 1.88rem;
+}
+.formFooter button{
+  width:7.44rem;
+  height:2.56rem;
+  background-color: #FC6C4C;
+  border-radius: 0.63rem;
+  color:white;
+  font-size: 0.88rem;
+  border:none;
+}
+#firstStep{
+    animation-name: formEnter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+#secondStep{
+  display: none;
+  animation-name: formEnter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes formEnter{
+  0%{
+    opacity: 50%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+#secondStep .formFooter, #thirdStep .formFooter, #fourthStep .formFooter{
+  display: flex;
+  justify-content: space-between;
+}
+.formFooter .goBackButton{
+    width:7.44rem;
+  height:2.56rem;
+  background-color: transparent;
+  border-radius: 0.63rem;
+  color:#FC6C4C;
+  font-size: 0.88rem;
+  border:2px solid #FC6C4C;
+}
+.skillLevelWrapper{
+  width:16.88rem;
+  height:4.31rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.63rem;
+  border: 2px solid #D1D5DB;
+  font-weight: bold;
+  cursor: pointer;
+}
+.skillLevelWrapper:hover{
+  border: 2px solid #FC6C4C;
+}
+.skillChosen{
+    border: 2px solid #FC6C4C;
+
+}
+.skillLevelWrapper > div, .skillLevelWrapper > input{
+  width:2.13rem;
+  height:2.13rem;
+  border-radius: 50%;
+  background-color: #FC6C4C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  margin-left: 1.13rem;
+  margin-right:1rem;
+
+
+}
+.skillLevelWrapper > input{
+  height:1.25rem;
+  width:1.25rem;
+}
+.skillLevelWrapper > input[type='checkbox'] {
+    accent-color: #FC6C4C;
+    color-scheme: light;
+    cursor: pointer;
+}
+#thirdStep{
+  display: none;
+    animation-name: formEnter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+#fourthStep{
+  display: none;
+    animation-name: formEnter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.summaryWrapper{
+  font-size: 0.88rem;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto;
+  margin-top:2.13rem;
+  margin-bottom: 2.13rem;
+  height:10.56rem;
+  color:#111827;
+  padding-right: 0.88rem;
+}
+.summaryInnerWrapper{
+  width:11.06rem;
+  height:4.38rem;
+  border-radius: 0.63rem;
+  background-color: #E5E7EB;
+  padding-top:1rem;
+  padding-left: 0.88rem;
+}
+.summaryInnerWrapper p:nth-of-type(1){
+  color: #4B5563;
+}
+.summaryInnerWrapper p:last-of-type{
+  margin-top:0.33rem;
+}
+#lastStep{
+  display: none;
+    animation-name: formEnter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.submitContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top:8.15rem;
+  padding-bottom: 7.38rem;
+  padding-right:min(10vw, 5.19rem);
+  padding-left:min(10vw,5.19rem);
+  text-align: center;
+}
+.submitContent p:nth-of-type(1){
+  margin-top:1.50rem;
+  margin-bottom: 0.88rem;
+}
+.submitContent p:last-of-type{
+  background-attachment: red;
+  width: 90%;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+@keyframes changeColor{
+  0%{
+    background-color: #E5E7EB;
+  }
+  100%{
+    background-color: #FC6C4C;
+  }
+}
+
+@keyframes backColor{
+  0%{
+     background-color: #FC6C4C;
+  }
+  100%{
+    background-color: #E5E7EB;
+  }
+}
+/* write your CSS here */
+@media (max-width:800px){
+  .formInputWrapper, .summaryWrapper{
+    height:80%;
+    grid-template-columns: auto;
+
+  }
+  .summaryWrapper{
+    gap:20px;
+    justify-content: center;
+  }
+}
